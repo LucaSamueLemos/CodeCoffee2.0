@@ -67,14 +67,13 @@
             <li class="nav-item">
               <a class="nav-link" href="#contact-container">Contato</a>
             </li>
-            
           </ul>
         </div>
       </div>
     </nav>
     <!-- SLIDER -->
     <div class="container" id="slider-container">
-      <div id="slider" class="carousel slide" data-bs-ride="carousel">
+      < id="slider" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button
             type="button"
@@ -139,64 +138,109 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <div class="col-12 col-md-10 offset-md-1" id="mini-banners">
-        <div class="row">
-          <div class="col-12 col-md-3">
-            <div class="card text-center">
-              <i class="bi bi-box primary-color"></i>
-              <div class="card-body">
-                <h5 class="card-title primary-color">Projetos completos</h5>
-                <p class="card-text secondary-color">
-                  Alguns dos nossos projetos completos, para servir de inspiração e também abertos a novas ideias .
-                </p>
-                <a href="#" class="btn btn-dark">Saiba Mais</a>
-              </div>
+      <div>
+            <div class="borda">
+              <form>
+                  <fieldset class="fsForm">
+                      <legend>Dados de Identificação </legend>
+      
+                      <label for="nome">Nome: </label>
+                      <input type="text" id="nome">  
+      
+                      <label for="cpf">CPF: </label>
+                       <input type="number" name="CPF" id="cpf" >
+                      <br><br>
+                      <label >Telefone:  </label>
+                      <input type="number" name="telefone">
+      
+                      <label >E-Mail : </label>
+                      <input type="text" name="email">
+                      <br><br>
+                      <label >Endereço: </label>
+                      <input type="text" name="endereço" class="text-input" >
+      
+                  </fieldset>
+                  <fieldset class="fsResDir">
+                      <legend>Forma de Pagamento</legend>
+                      <br>
+                      <input type="radio" name="pagamento"><label>Cartão</label>
+                      <input type="radio" name="pagamento"><label>Cheque</label>
+                      <input type="radio" name="pagamento"><label>Dinheiro</label>
+                      <br><br>
+                      <fieldset>
+                          <legend>Dados do Cartão</legend>
+                          <br>
+                          <input type="radio" name="card-flag" id="visa-flag"><label ><img src="/img/visa.png" alt="cartão Visa" name="visa" value="CartaoVisa"></label>
+                          <input type="radio" name="card-flag" id="mastercard-flag"><label ><img src="/img/master.png" alt="Cartão MasterCard" name="master" value="artaomaster"></label>
+                          <input type="radio" name="card-flag" id="amex-flag"><label ><img src="/img/amex.png" alt="Cartão American Amex" name="amex" value="cartaoamex"></label>
+                          <br><br><label >Validade :</label><input type="month">
+                          <br><br><label for="card-number">Numero:</label><input type="text" id="card-number" onkeyup="selectCardFlag(this)">
+                      </fieldset>
+      
+                      <br><br><br>
+                      <div class="bts">
+                          <button type="submit" class="bts-unitario">Enviar</button>
+                          <button type="reset" class="bts-unitario" >Limpar</button>
+                      </div>
+      
+                  </fieldset>
+      
+                  <fieldset class="fsResEsq">
+                      <legend>Produtos</legend>
+                      <br>
+                          <label >Máquinas</label> <!-- Lista de seleção das maquinas -->
+                              <select name="maquinas" id="select" >
+                                  <optgroup>
+                                      <option value="">--------------</option>
+                                  </optgroup>
+                                  <optgroup label="Dolce Gusto">
+                                      <option value="Piccolo" data-price="340,00">Piccolo</option>
+                                  </optgroup>
+                                  <optgroup label="Nespresso">
+                                      <option value="Inissia C40"data-price="300,00" >Inissia C40</option>
+                                      <option value="U C50" data-price="400,00">U C50</option>
+                                  </optgroup>
+                                  <optgroup label="Senseo">
+                                      <option value="HD7811" data-price="230,00" >HD7811/96</option>
+                                  </optgroup>
+                                                            
+                              </select>
+                          <br><br>
+      
+                          <label for="">Saches</label>
+                               <select  id="select " ><!-- Lista de seleção dos saches  -->
+                                   <optgroup >
+                                       <option>----------</option>
+                                  </optgroup>
+                                   <optgroup label="Dolce Gusto">
+                                       <option value="Expresso" data-price="24,00" >Expresso</option>
+                                       <option value="Descafeinado" data-price="21,00">Descafeinado</option>
+                                   </optgroup>
+                                   <optgroup label="Nespresso">
+                                      <option value="Livanto" data-price="35,00">Livanto</option>
+                                       <option value="Ristretto" data-price="42,00">Ristretto</option>
+                                       <option value="Vanilio" data-price="46,00">Vanilio</option>
+                                   </optgroup>
+                                  <optgroup label="Senseo">
+                                      <option value="Classico" data-price="14,00">Classico</option>
+                                      <option value="Intenso" data-price="14,00">Intenso</option>
+                               </optgroup>
+                             </select>
+                             <br><br>
+                             <label for="">Selecionados: </label><input type="reset" value="Remover">
+                             <br>
+                             <textarea id="shoppingList" readonly style="resize: none;"  rows="5" ></textarea>
+                             
+                            <label>Valor:</label>
+                            
+                             <textarea id="total"  cols="8" rows="1" style="resize: none;" readonly></textarea>
+                  </fieldset>
+              </form>
             </div>
-          </div>
-          <div class="col-12 col-md-3">
-            <div class="card text-center">
-              <i class="bi bi-layers primary-color"></i>
-              <div class="card-body">
-                <h5 class="card-title primary-color">Você participa também</h5>
-                <p class="card-text secondary-color">
-                  Área colaborativa,onde voce pode ajudar em um projeto que esteja sendo desenvolvido.
-                </p>
-                <a href="#" class="btn btn-dark">Saiba Mais</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-3">
-            <div class="card text-center">
-              <i class="bi bi-lightning-charge"></i>
-              <div class="card-body primary-color">
-                <h5 class="card-title primary-color">
-                  Adiantamento de entregas
-                </h5>
-                <p class="card-text secondary-color">
-                  Acompanhe ao vivo como esta o andamento de alguns de nossos projetos.
-                </p>
-                <a href="#" class="btn btn-dark">Saiba Mais</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-3">
-            <div class="card text-center">
-              <i class="bi bi-cup-hot"></i>
-              <div class="card-body">
-                <h5 class="card-title primary-color">Vai um café?
-                  
-                </h5>
-                <p class="card-text secondary-color">
-                  Um bom programador não vive sem o seu fiel companheiro, também trabalhamos com cafés de diversos tipos.
-                </p>
-                <a href="#" class="btn btn-dark">Saiba Mais</a>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
       </div>
     </div>
-    <!-- DESTAQUES -->
+    <!-- DESTAQUES 
     <div class="container" id="featured-container">
       <div class="col-12">
         <h2 class="title primary-color">Trabalhos em Destaque</h2>
@@ -251,10 +295,10 @@
         </div>
       </div>
     </div>
+-->
 
 
-
-    <!-- INFO -->
+    <!-- INFO 
     <div class="container" id="info-container">
       <div class="col-12">
         <h2 class="title primary-color">Nosso Ambiente</h2>
@@ -310,6 +354,7 @@
         </div>
       </div>
     </div>
+  -->
     <!-- FOOTER -->
     <footer class="container-fluid bg-dark-color" id="footer">
       <div class="container">
